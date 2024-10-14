@@ -1,0 +1,36 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.resource {
+  &__image {
+    border: 3px solid $color-border-primary;
+    border-radius: 20px;
+    object-fit: contain;
+    width: 4rem;
+    height: 4rem;
+
+    @include tablet-and-desktop {
+      width: 10rem;
+      height: 8rem;
+    }
+
+    @include desktop {
+      width: 15rem;
+      height: 10rem;
+    }
+
+    &--dark {
+      border: 3px solid $color-dark-border-primary;
+    }
+  }
+
+  &__text {
+    @include body-small-text($color-text-primary);
+    font-weight: 600;
+    margin-right: 0.5rem;
+
+    &--dark {
+      color: $color-dark-text-primary;
+    }
+  }
+}

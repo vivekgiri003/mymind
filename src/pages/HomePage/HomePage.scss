@@ -1,0 +1,177 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+@keyframes rotate {
+  0% {
+    transform: perspective(850px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(850px) translateZ(150px) rotateY(180deg);
+  }
+}
+
+.home {
+  @include flex(row, center, start);
+  background-color: $color-background-primary;
+  padding-bottom: 8rem;
+
+  @include tablet-and-desktop {
+    padding-top: 6rem;
+  }
+
+  &--dark {
+    background-color: $color-dark-background-primary;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: $max-width;
+    padding: 2rem;
+  }
+
+  &__heading {
+    @include heading($color-text-primary);
+    margin-top: 2.5rem;
+
+    &--dark {
+      color: $color-dark-text-primary;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__articles {
+    @include tablet-and-desktop {
+      @include flex(row, center, center);
+      flex-wrap: wrap;
+    }
+  }
+
+  &__article {
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-radius: 20px;
+
+    @include tablet-and-desktop {
+      width: 12.5rem;
+      margin-right: 2rem;
+    }
+
+    @include desktop {
+      width: 17.5rem;
+    }
+
+    &--blue {                               //
+      background-color: $color-background-quinary;
+
+      @include tablet-and-desktop {
+        &:hover {
+          outline: 5px solid $color-dark-border-tertiary;
+          animation: rotate 3s;
+        }
+      }
+
+      &--dark {
+        background-color: $color-dark-background-quinary;
+
+        @include tablet-and-desktop {
+          &:hover {
+            outline: 5px solid $color-border-tertiary;
+          }
+        }
+      }
+    }
+
+    &--orange {
+      background-color: $color-background-tertiary;
+
+      @include tablet-and-desktop {
+        &:hover {
+          outline: 5px solid $color-dark-border-quaternary;
+          animation: rotate 3s;
+        }
+      }
+
+      &--dark {
+        background-color: $color-dark-background-tertiary;
+
+        @include tablet-and-desktop {
+          &:hover {
+            outline: 5px solid $color-border-quaternary;
+          }
+        }
+      }
+    }
+
+    &--green {
+      background-color: $color-background-quaternary;
+
+      @include tablet-and-desktop {
+        &:hover {
+          outline: 5px solid $color-dark-border-secondary;
+          animation: rotate 3s;
+        }
+      }
+
+      &--dark {
+        background-color: $color-dark-background-quaternary;
+
+        @include tablet-and-desktop {
+          &:hover {
+            outline: 5px solid $color-border-secondary;
+          }
+        }
+      }
+    }
+
+    &--grey {
+      background-color: $color-dark-background-senary;
+
+      @include tablet-and-desktop {
+        &:hover {
+          outline: 5px solid $color-border-primary;
+          animation: rotate 3s;
+        }
+      }
+
+      &--dark {
+        background-color: $color-dark-background-secondary;
+
+        @include tablet-and-desktop {
+          &:hover {
+            outline: 5px solid $color-dark-border-primary;
+          }
+        }
+      }
+    }
+
+    &--navy {
+      background-color: $color-dark-background-quinary;
+
+      @include tablet-and-desktop {
+        &:hover {
+          outline: 5px solid $color-border-tertiary;
+          animation: rotate 3s;
+        }
+      }
+
+      &--dark {
+        background-color: $color-dark-background-septenary;
+
+        @include tablet-and-desktop {
+          &:hover {
+            outline: 5px solid $color-dark-background-quinary;
+          }
+        }
+      }
+    }
+  }
+
+  &__error {
+    @include body-small-text($color-text-error);
+    text-align: center;
+  }
+}

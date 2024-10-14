@@ -1,0 +1,64 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.account {
+  background-color: $color-background-primary;
+  @include flex(row, center, center);
+
+  &__container {
+    @include flex(column, start, center);
+    max-width: $max-width;
+    background-color: $color-background-secondary;
+    border: 3px solid $color-border-tertiary;
+    border-radius: 20px;
+    margin: 2rem 0;
+    width: 95%;
+
+    @include tablet-and-desktop {
+      width: 80%;
+    }
+
+    @include desktop {
+      width: 50%;
+    }
+  }
+
+  &__logo {
+    @include logo;
+    margin: 0;
+  }
+
+  &__heading {
+    @include heading($color-text-quaternary);
+    margin: 0;
+  }
+
+  &__greeting {
+    @include flex(row, center, center);
+    gap: 1rem;
+  }
+
+  &__subheading {
+    @include subheading($color-text-primary);
+    margin: 0;
+  }
+
+  &__icon {
+    @include icon;
+  }
+
+  &__text {
+    @include body-text($color-text-primary);
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  &__link {
+    font-weight: 700;
+    color: $color-button-primary;
+
+    &:hover {
+      color: $color-button-secondary;
+    }
+  }
+}

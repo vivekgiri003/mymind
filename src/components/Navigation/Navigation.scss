@@ -1,0 +1,96 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.nav {
+  @include flex(row, center, center);
+  background-color: $color-background-secondary;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  top: 85%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top: 1px solid $color-border-primary;
+  box-shadow: 0px -1px 3px $color-border-primary;
+  z-index: 5;
+
+  @include tablet-and-desktop {
+    height: 5rem;                  // 6.5rem
+    top: 0;
+    bottom: 85%;
+    z-index: 0;
+    border-bottom: 1px solid $color-border-primary;
+    box-shadow: 0px 1px 5px $color-border-primary;
+  }
+
+  &--dark {
+    background-color: $color-dark-background-secondary;
+  }
+
+  &__container {
+    max-width: $max-width;
+    // max-height: $max-height;
+    width: 100%;
+    padding: 1rem 1rem;
+
+    @include tablet-and-desktop {
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__list {
+    @include flex(row, space-between, center);
+    width: 100%;
+    padding: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__item {
+    list-style: none;
+    @include flex(column, center, center);
+
+    @include tablet-and-desktop {
+      margin-top: .5rem;
+    }
+
+  }
+  &__item img,  // If icons are images
+  &__item svg,  // If icons are SVGs
+  &__item i {   // If icons are font-based like FontAwesome or Material Icons
+    width: 1.5rem;  // Set the desired width
+    height: 1.5rem; // Set the desired height for consistency
+
+    @include tablet-and-desktop {
+      width: 2rem;  // Optionally adjust the size for larger screens
+      height: 2rem;
+    }
+}
+
+
+  &__text {
+    @include body-text($color-text-primary);
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+
+    @include tablet-and-desktop {
+      @include subheading($color-text-primary);
+      font-weight: 700;
+
+      &:hover {
+        color: $color-text-quaternary;
+      }
+    }
+
+    &--dark {
+      color: $color-dark-text-primary;
+
+      &:hover {
+        color: $color-dark-text-tertiary;
+      }
+    }
+  }
+}
