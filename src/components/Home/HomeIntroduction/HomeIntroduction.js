@@ -23,7 +23,7 @@ export default function HomeIntroduction() {
               darkTheme ? "introduction__logo--dark" : ""
             }`}
           >
-            MindEase
+            MyMind
           </span>
           ,
         </h3>

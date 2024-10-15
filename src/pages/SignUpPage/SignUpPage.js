@@ -7,7 +7,7 @@ export default function SignUpPage() {
   return (
     <main className="account">
       <section className="account__container">
-        <h1 className="account__logo">MindEase</h1>
+        <h1 className="account__logo">MyMind</h1>
         <h2 className="account__heading">Sign Up</h2>
         <div className="account__greeting">
           <h3 className="account__subheading">Welcome!</h3>

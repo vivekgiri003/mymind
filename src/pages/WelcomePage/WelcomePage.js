@@ -6,9 +6,9 @@ export default function WelcomePage() {
   return (
     <main className="welcome">
       <section className="welcome__container">
-        <h1 className="welcome__logo">MindEase</h1>
+        <h1 className="welcome__logo">MyMind</h1>
         <p className="welcome__text">
-          Welcome to MindEase, your guide to mental wellness. Recognise signs of
+          Welcome to MyMind, your guide to mental wellness. Recognise signs of
           burnout early and take proactive steps to maintain balance and
           wellbeing.
         </p>

@@ -8,6 +8,11 @@ import moon from "../../assets/icons/moon.png";
 import sun from "../../assets/icons/sun.png";
 import "./Navigation.scss";
 
+import { IoHome } from "react-icons/io5"; ///
+import { MdDarkMode } from "react-icons/md";
+import { MdLightMode } from "react-icons/md";
+import { MdLogout } from "react-icons/md";
+
 export default function Navigation() {
   const { handleLogout } = useContext(AuthContext);
   const { darkTheme, handleTheme } = useContext(ThemeContext);
@@ -18,7 +23,7 @@ export default function Navigation() {
         <ul className="nav__list">
           <NavLink to="/home" className="nav__link">
             <li className="nav__item">
-              <img src={home} alt="Home Icon" />
+              {/* <img src={home} alt="Home Icon" /> */}{darkTheme ? <IoHome style ={{color : "white"}} /> : <IoHome style ={{color : "black"}} />}
               <p className={`nav__text ${darkTheme ? "nav__text--dark" : ""}`}>
                 Home
               </p>
@@ -27,13 +32,13 @@ export default function Navigation() {
           <NavLink className="nav__link">
             {!darkTheme && (
               <li className="nav__item" onClick={handleTheme}>
-                <img src={moon} alt="Moon Icon" />
+                {/* <img src={moon} alt="Moon Icon" /> */}<MdDarkMode style={{color:"black"}}/>
                 <p className="nav__text">Dark Mode</p>
               </li>
             )}
             {darkTheme && (
               <li className="nav__item" onClick={handleTheme}>
-                <img src={sun} alt="Sun Icon" />
+                {/* <img src={sun} alt="Sun Icon" /> */}<MdLightMode style={{color:"white"}}/>
                 <p
                   className={`nav__text ${darkTheme ? "nav__text--dark" : ""}`}
                 >
@@ -44,7 +49,7 @@ export default function Navigation() {
           </NavLink>
           <NavLink className="nav__link">
             <li className="nav__item" onClick={handleLogout}>
-              <img src={logout} alt="Log Out Icon" />
+              {/* <img src={logout} alt="Log Out Icon" /> */}{darkTheme ? <MdLogout style ={{color : "white"}} /> : <MdLogout style ={{color : "black"}} />}
               <p className={`nav__text ${darkTheme ? "nav__text--dark" : ""}`}>
                 Log Out
               </p>

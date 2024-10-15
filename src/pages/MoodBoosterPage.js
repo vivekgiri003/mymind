@@ -97,13 +97,13 @@ export default function MoodBoosterPage() {
               {boosterEntries && boosterEntries.length > 0 && (
                 <BoosterDaily boosterEntries={boosterEntries} />
               )}
-              {boosterEntries && userData && chartData && (
+              {/* {boosterEntries && userData && chartData && (
                 <RecommendAI
                   boosterEntries={boosterEntries}
                   userData={userData}
                   chartData={chartData}
                 />
-              )}
+              )} */}
               <div
                 className={`page__information page__information--orange ${
                   darkTheme ? "page__information--orange--dark" : ""
